@@ -8,7 +8,7 @@ A **beginner-friendly, Python-focused** guide to **Azure DevOps** CI/CD — from
 
 | Module | Topic |
 |---|---|
-| **1. Introduction** | What Azure DevOps is, billing, org/project/repo setup, the sample Python app, and a [Git & Azure Repos cheatsheet](docs/1-Introduction/8-Git-and-Azure-Repos-Cheatsheet.md) |
+| **1. Introduction** | What Azure DevOps is, billing, org/project/repo setup, the sample Python app |
 | **2. Classic Pipelines** | CI/CD with the visual editor: build, test + coverage, App Service, Linux VM (Nginx + Gunicorn), Docker/ACR, AKS |
 | **3. YAML Pipelines** | Pipeline-as-code: syntax, stages/jobs, variables, templates, environments, caching, a Python CI template, and an end-to-end AKS lab |
 | **4. Self-Hosted Agents** | Running your own agents on a VM, Docker, Kubernetes, KEDA autoscaling, and a full Windows-agent reference |

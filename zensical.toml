@@ -5,10 +5,13 @@
 [project]
 site_name = "Azure DevOps Blueprint"
 site_description = "A beginner-friendly, Python-focused guide to Azure DevOps CI/CD."
-# Replace with your GitHub Pages URL: https://<username>.github.io/<repository>/
-site_url = "https://example.github.io/azure-devops-blueprint/"
+site_url = "https://cagricatik.github.io/Azure-DevOps-Blueprint/"
 docs_dir = "docs"
 site_dir = "site"
+
+# Source repository — shows a GitHub link/icon in the header.
+repo_url = "https://github.com/CagriCatik/Azure-DevOps-Blueprint"
+repo_name = "CagriCatik/Azure-DevOps-Blueprint"
 
 # Custom stylesheet (relative to docs_dir) -> docs/stylesheets/extra.css
 extra_css = ["stylesheets/extra.css"]
@@ -79,6 +82,18 @@ nav = [
 [project.theme]
 # "modern" (default) or "classic"
 variant = "modern"
+
+# Light/dark mode toggle. The first palette (light) is the default; clicking the
+# icon switches to the second (dark), and the choice is remembered.
+[[project.theme.palette]]
+scheme = "default"
+toggle.icon = "lucide/sun"
+toggle.name = "Switch to dark mode"
+
+[[project.theme.palette]]
+scheme = "slate"
+toggle.icon = "lucide/moon"
+toggle.name = "Switch to light mode"
 
 # Markdown extensions.
 # NOTE: declaring this section REPLACES Zensical's built-in defaults entirely,

@@ -1,6 +1,7 @@
 # Zensical build output
 site/
 .zensical/
+.cache
 
 # Python
 .venv/
