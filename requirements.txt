@@ -1,0 +1,6 @@
+# Tools needed to build and preview the Zensical documentation site.
+#   python -m venv .venv
+#   .venv\Scripts\activate        (Windows)   |   source .venv/bin/activate   (macOS/Linux)
+#   pip install -r requirements.txt
+#   zensical serve                (preview at http://localhost:8000)
+zensical==0.0.44

@@ -1,0 +1,37 @@
+/* ==========================================================================
+   Azure DevOps Blueprint — custom styles
+   Loaded via extra_css in zensical.toml.
+   ========================================================================== */
+
+/* --- Mermaid diagrams ----------------------------------------------------- */
+
+/* Center diagrams and give them a little breathing room. */
+.mermaid {
+  display: flex;
+  justify-content: center;
+  margin: 1.5rem 0;
+}
+
+/* Keep wide diagrams responsive instead of overflowing the page. */
+.mermaid svg {
+  max-width: 100%;
+  height: auto;
+}
+
+/* --- Readability tweaks --------------------------------------------------- */
+
+/* Slightly wider content column so tables and code don't feel cramped. */
+.md-grid {
+  max-width: 64rem;
+}
+
+/* Make tables span the available width for easier scanning. */
+.md-typeset table:not([class]) {
+  width: 100%;
+  display: table;
+}
+
+/* Soften long inline code / file paths so they wrap instead of overflowing. */
+.md-typeset code {
+  word-break: break-word;
+}

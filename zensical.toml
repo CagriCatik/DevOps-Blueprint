@@ -1,0 +1,123 @@
+# Zensical site configuration — https://zensical.org/docs/
+# Build locally:   zensical serve      (preview at http://localhost:8000)
+# Build for prod:  zensical build --clean   (output -> site/)
+
+[project]
+site_name = "Azure DevOps Blueprint"
+site_description = "A beginner-friendly, Python-focused guide to Azure DevOps CI/CD."
+# Replace with your GitHub Pages URL: https://<username>.github.io/<repository>/
+site_url = "https://example.github.io/azure-devops-blueprint/"
+docs_dir = "docs"
+site_dir = "site"
+
+# Custom stylesheet (relative to docs_dir) -> docs/stylesheets/extra.css
+extra_css = ["stylesheets/extra.css"]
+
+# Navigation. Paths are relative to docs_dir. Page titles are taken from each
+# file's first H1. Listing files explicitly guarantees the correct order
+# (auto-nav would sort "10-" before "2-").
+nav = [
+  {"Home" = "index.md"},
+  {"Introduction" = [
+    "1-Introduction/1-Introduction.md",
+    "1-Introduction/2-Azure-DevOps-Billing.md",
+    "1-Introduction/3-Creating-Az-DevOps-Organization-and-Adding-AAD-User.md",
+    "1-Introduction/4-Creating-Az-DevOps-Public-Project.md",
+    "1-Introduction/5-Creating-Azure-Repo.md",
+    "1-Introduction/6-Classic-vs-Yaml-Pipelines.md",
+    "1-Introduction/7-Sample-Python-Application.md",
+    "1-Introduction/8-Git-and-Azure-Repos-Cheatsheet.md"
+  ]},
+  {"Azure Classic Pipelines" = [
+    "2-Azure-Classic-Pipelines/1-Python-Classic-Build-Pipeline.md",
+    "2-Azure-Classic-Pipelines/2-Adding-UnitTests-and-Code-Coverage-Report.md",
+    "2-Azure-Classic-Pipelines/3-Creating-Azure-App-Service-Release-Pipeline.md",
+    "2-Azure-Classic-Pipelines/4-MultiStage-Release-Pipeline-and-Azure-App-service-slots.md",
+    "2-Azure-Classic-Pipelines/5-Variable-Groups-and-Replace-Tokens-Task.md",
+    "2-Azure-Classic-Pipelines/6-Creating-Azure-Linux-VM-and-Installing-Nginx-Gunicorn.md",
+    "2-Azure-Classic-Pipelines/7-Creating-Deployment-Group-and-Azure-VM-Release-Pipeline.md",
+    "2-Azure-Classic-Pipelines/8-Creating-DockerFile-and-Azure-Container-Registry.md",
+    "2-Azure-Classic-Pipelines/9-Creating-Container-App-Service-and-Make-Release-Pipeline.md",
+    "2-Azure-Classic-Pipelines/10-Creating-AKS-Kubernetes-Cluster-and-Explaining-HelmChart.md",
+    "2-Azure-Classic-Pipelines/11-Creating-Release-Pipeline-to-Deploy-to-AKS-Cluster.md",
+    "2-Azure-Classic-Pipelines/12-Creating-Task-Group-for-AKS-MultiStage-Release-Pipeline.md"
+  ]},
+  {"Azure YAML Pipelines" = [
+    "3-Azure-Yaml-Pipelines/1-Basic-Yaml-Pipeline-Syntax.md",
+    "3-Azure-Yaml-Pipelines/2-Stages-vs-Jobs-in-Yaml-Pipelines.md",
+    "3-Azure-Yaml-Pipelines/3-Variables-in-Yaml-Pipelines.md",
+    "3-Azure-Yaml-Pipelines/4-Runtime-Parameters.md",
+    "3-Azure-Yaml-Pipelines/5-Compiletime-vs-Runtime-Expressions.md",
+    "3-Azure-Yaml-Pipelines/6-Functions-in-Yaml-Pipelines.md",
+    "3-Azure-Yaml-Pipelines/7-Conditioning-in-Yaml-Pipelines.md",
+    "3-Azure-Yaml-Pipelines/8-Looping-and-Matrix-Strategy.md",
+    "3-Azure-Yaml-Pipelines/9-Triggers-and-Resources.md",
+    "3-Azure-Yaml-Pipelines/10-Container-Jobs.md",
+    "3-Azure-Yaml-Pipelines/11-Build-vs-Pipeline-vs-Azure-Artifacts.md",
+    "3-Azure-Yaml-Pipelines/12-Caching-in-Yaml-Pipelines.md",
+    "3-Azure-Yaml-Pipelines/13-Templates-in-Yaml-Pipelines.md",
+    "3-Azure-Yaml-Pipelines/14-Creating-Python-CI-Template.md",
+    "3-Azure-Yaml-Pipelines/15-Environments-and-Pre-Deployment-Approvals.md",
+    "3-Azure-Yaml-Pipelines/16-AKS-Cluster-Environment-Lab.md",
+    "3-Azure-Yaml-Pipelines/17-Publishing-Docs-with-MkDocs-to-Azure-Static-Web-Apps.md"
+  ]},
+  {"Self-Hosted Agents" = [
+    "4-Self-Hosted-Agents/1-Azure-Pipelines-Agent-in-Windows-Vm.md",
+    "4-Self-Hosted-Agents/2-Azure-Pipelines-Agent-in-Docker-Container.md",
+    "4-Self-Hosted-Agents/3-Azure-Pipelines-Agent-in-Kubernetes-Cluster.md",
+    "4-Self-Hosted-Agents/4-AutoScaling-K8s-Pipeline-Agent-with-KEDA-Operator.md",
+    "4-Self-Hosted-Agents/5-Deploying-a-Self-Hosted-Windows-Agent.md"
+  ]},
+  {"Security in Azure DevOps" = [
+    "5-Security-in-Azure-DevOps/1-Security-Groups-in-Azure-DevOps.md",
+    "5-Security-in-Azure-DevOps/2-Pipelines-Releases-and-Variable-Groups-Permissions.md",
+    "5-Security-in-Azure-DevOps/3-Environments-AgentPools-and-ServiceConnections-Permissions.md",
+    "5-Security-in-Azure-DevOps/4-Azure-Repos-Permissions-and-Policies.md"
+  ]}
+]
+
+[project.theme]
+# "modern" (default) or "classic"
+variant = "modern"
+
+# Markdown extensions.
+# NOTE: declaring this section REPLACES Zensical's built-in defaults entirely,
+# so we reproduce the full default set here (admonition, highlight, toc, etc.)
+# and add the mermaid custom fence to superfences. Dropping any of these would
+# silently disable that feature (e.g. omitting "admonition" breaks !!! blocks).
+[project.markdown_extensions.abbr]
+[project.markdown_extensions.admonition]
+[project.markdown_extensions.attr_list]
+[project.markdown_extensions.def_list]
+[project.markdown_extensions.footnotes]
+[project.markdown_extensions.md_in_html]
+[project.markdown_extensions.toc]
+permalink = true
+[project.markdown_extensions.pymdownx.arithmatex]
+generic = true
+[project.markdown_extensions.pymdownx.betterem]
+[project.markdown_extensions.pymdownx.caret]
+[project.markdown_extensions.pymdownx.details]
+[project.markdown_extensions.pymdownx.emoji]
+emoji_generator = "zensical.extensions.emoji.to_svg"
+emoji_index = "zensical.extensions.emoji.twemoji"
+[project.markdown_extensions.pymdownx.highlight]
+anchor_linenums = true
+line_spans = "__span"
+pygments_lang_class = true
+[project.markdown_extensions.pymdownx.inlinehilite]
+[project.markdown_extensions.pymdownx.keys]
+[project.markdown_extensions.pymdownx.magiclink]
+[project.markdown_extensions.pymdownx.mark]
+[project.markdown_extensions.pymdownx.smartsymbols]
+# Render ```mermaid code blocks as diagrams (auto-loads the mermaid.js runtime).
+[project.markdown_extensions.pymdownx.superfences]
+custom_fences = [
+  { name = "mermaid", class = "mermaid", format = "pymdownx.superfences.fence_code_format" }
+]
+[project.markdown_extensions.pymdownx.tabbed]
+alternate_style = true
+combine_header_slug = true
+[project.markdown_extensions.pymdownx.tasklist]
+custom_checkbox = true
+[project.markdown_extensions.pymdownx.tilde]
