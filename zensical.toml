@@ -5,13 +5,13 @@
 [project]
 site_name = "Azure DevOps Blueprint"
 site_description = "A beginner-friendly, Python-focused guide to Azure DevOps CI/CD."
-site_url = "https://cagricatik.github.io/Azure-DevOps-Blueprint/"
+site_url = "https://cagricatik.github.io/devops-blueprint/"
 docs_dir = "docs"
 site_dir = "site"
 
 # Source repository — shows a GitHub link/icon in the header.
-repo_url = "https://github.com/CagriCatik/Azure-DevOps-Blueprint"
-repo_name = "CagriCatik/Azure-DevOps-Blueprint"
+repo_url = "https://github.com/CagriCatik/devops-blueprint"
+repo_name = "CagriCatik/devops-blueprint"
 
 # Custom stylesheet (relative to docs_dir) -> docs/stylesheets/extra.css
 extra_css = ["stylesheets/extra.css"]

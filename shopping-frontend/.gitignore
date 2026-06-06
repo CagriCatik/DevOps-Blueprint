@@ -1,0 +1,12 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Test / coverage artifacts
+.pytest_cache/
+junit/
+.coverage
+coverage.xml
+htmlcov/
