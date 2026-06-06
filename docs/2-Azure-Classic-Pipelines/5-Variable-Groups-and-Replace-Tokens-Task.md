@@ -16,14 +16,17 @@ flowchart TD
 ```
 
 ## Creating a Variable Group
+
 1. Go to **Pipelines → Library → + Variable group**.
 2. Name the group (e.g., `App-Production`).
 3. Add key-value pairs. Mark secrets as **🔒 secret** to mask them in logs.
 
 ### Linking to Azure Key Vault
+
 For high-security environments, link the variable group to an **Azure Key Vault**. Azure DevOps will pull the secrets at runtime without storing them in Azure DevOps itself.
 
 ## The Replace Tokens Task
+
 Install the **Replace Tokens** extension from the Azure DevOps Marketplace. Then add the task to your release stage:
 
 | Setting | Value |
@@ -35,6 +38,7 @@ Install the **Replace Tokens** extension from the Azure DevOps Marketplace. Then
 | Action on missing variable | `fail` |
 
 ### Example: `config.json` before replacement
+
 Our Flask app reads its settings from a small `config.json` checked into the repo with **placeholders** instead of real values:
 
 ```json

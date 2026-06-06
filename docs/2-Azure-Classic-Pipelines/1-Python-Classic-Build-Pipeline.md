@@ -24,6 +24,7 @@ flowchart LR
 In the Classic editor you add **tasks** from a searchable catalog. Here are the tasks that make up a Python CI build, in order.
 
 ### 1. Use Python Version
+
 Tells the agent which Python interpreter to use, so your build is predictable.
 
 ```text
@@ -32,6 +33,7 @@ Version spec: 3.12
 ```
 
 ### 2. Install Dependencies
+
 The Python equivalent of "restore". Installs everything your app and tests need. We use a **script** task (Bash or PowerShell) for simple `pip` commands.
 
 ```bash
@@ -40,6 +42,7 @@ pip install -r requirements-dev.txt
 ```
 
 ### 3. Lint (the closest thing to a "build")
+
 Since there is nothing to compile, we run a linter to catch syntax errors and obvious mistakes early. This is the quality gate that "fails fast".
 
 ```bash
@@ -47,6 +50,7 @@ flake8 .
 ```
 
 ### 4. Test
+
 Runs all unit tests and produces machine-readable reports that Azure DevOps can display.
 
 ```bash
@@ -57,6 +61,7 @@ pytest --junitxml=junit/test-results.xml --cov=app --cov-report=xml
 - `--cov=app --cov-report=xml` measures **code coverage** and writes `coverage.xml` in Cobertura format.
 
 ### 5. Publish Test Results
+
 Surfaces pass/fail counts on the run summary so you do not have to read raw logs.
 
 ```text
@@ -66,6 +71,7 @@ Test results files: junit/test-results.xml
 ```
 
 ### 6. Archive & Publish Artifact
+
 Python is not compiled, so "publishing" simply means **zipping the source** (the files needed to run the app) and uploading it for the Release pipeline to deploy.
 
 ```text

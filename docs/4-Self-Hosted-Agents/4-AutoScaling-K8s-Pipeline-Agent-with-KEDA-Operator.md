@@ -3,6 +3,7 @@
 Manually scaling pipeline agents is inefficient. **KEDA (Kubernetes Event-driven Autoscaling)** allows your AKS cluster to automatically scale your agent pods based on the number of pending jobs in your Azure DevOps queue.
 
 ## 1. Install KEDA
+
 KEDA can be installed easily using Helm:
 ```bash
 helm repo add kedacore https://kedacore.github.io/charts
@@ -11,11 +12,14 @@ helm install keda kedacore/keda --namespace keda --create-namespace
 ```
 
 ## 2. Jobs vs. Deployments
+
 When auto-scaling with KEDA, it is highly recommended to scale **Kubernetes Jobs** rather than Deployments.
-*   **Why?** If KEDA scales down a Deployment, it might randomly terminate a Pod that is currently executing a pipeline, causing the build to fail unpredictably.
-*   **The Solution:** Use the `--once` flag in your agent's startup script. KEDA will spawn a Kubernetes `Job` for each pending pipeline run. The agent will process exactly one pipeline job and then intentionally exit, cleanly completing the Kubernetes Job.
+
+* **Why?** If KEDA scales down a Deployment, it might randomly terminate a Pod that is currently executing a pipeline, causing the build to fail unpredictably.
+* **The Solution:** Use the `--once` flag in your agent's startup script. KEDA will spawn a Kubernetes `Job` for each pending pipeline run. The agent will process exactly one pipeline job and then intentionally exit, cleanly completing the Kubernetes Job.
 
 ## 3. Configure the KEDA ScaledJob
+
 To configure KEDA, you define a `ScaledJob` custom resource. This resource connects the Azure DevOps trigger to your agent pod template.
 
 ```yaml
@@ -45,6 +49,7 @@ spec:
 ```
 
 ## 4. The Placeholder Agent
+
 KEDA monitors the Azure DevOps agent pool to determine the queue length.
 !!! info "Important"
 

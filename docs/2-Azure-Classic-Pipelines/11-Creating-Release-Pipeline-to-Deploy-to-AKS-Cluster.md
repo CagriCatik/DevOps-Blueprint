@@ -14,14 +14,17 @@ flowchart LR
 ```
 
 ## Step 1: Add the AKS Service Connection
+
 1. Go to **Project Settings → Service connections**.
 2. Add a new **Kubernetes** service connection.
 3. Select **Azure Subscription**, choose your AKS cluster and namespace.
 
 ## Step 2: Configure the Release Stage
+
 In the release stage, add tasks in this order:
 
 ### Task 1: Helm Installer
+
 Ensure Helm is available on the build agent.
 ```
 Task: HelmInstaller@1
@@ -29,6 +32,7 @@ Helm version: latest
 ```
 
 ### Task 2: Helm Upgrade
+
 ```
 Task: HelmDeploy@0
 Connection type: Kubernetes Service Connection
@@ -42,6 +46,7 @@ Install if release not found: true
 ```
 
 ## Step 3: Verifying the Deployment
+
 After the pipeline completes, verify the rollout:
 ```bash
 kubectl rollout status deployment/shopping-frontend -n production

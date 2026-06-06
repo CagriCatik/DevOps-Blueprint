@@ -21,6 +21,7 @@ sequenceDiagram
 ## Release Pipeline Stages
 
 ### Stage 1: Deploy to Staging Slot
+
 Configure the **Azure App Service Deploy** task to target the staging slot:
 
 | Field | Value |
@@ -31,6 +32,7 @@ Configure the **Azure App Service Deploy** task to target the staging slot:
 | Slot | `staging` |
 
 ### Stage 2: Swap Slots (Production)
+
 After validating the staging deployment, add an **Azure App Service Manage** task:
 
 | Field | Value |
@@ -45,6 +47,7 @@ After validating the staging deployment, add an **Azure App Service Manage** tas
     This is where our app's **`/health` endpoint** earns its keep. Before swapping, add a script step that curls `https://<app>-staging.azurewebsites.net/health` and fails the stage if it does not return `{"status": "ok"}`. That way a broken deployment never reaches production.
 
 ### Stage Gates & Approvals
+
 Add a **pre-deployment approval** on the Swap stage. A designated approver must manually verify the staging slot before production traffic is swapped over.
 
 !!! tip

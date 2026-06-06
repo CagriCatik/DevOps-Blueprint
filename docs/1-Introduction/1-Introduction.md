@@ -24,6 +24,8 @@ This knowledge base focuses on utilizing Azure DevOps for Continuous Integration
 
 To follow along with hands-on deployments, an **Azure Cloud account** is required. You can start with an Azure Free account, which typically provides $200 in initial credits.
 
+**Set up your machine first:** [Local Tools and Environment Setup](9-Local-Tools-and-Environment-Setup.md) walks through registering an Azure account and installing the Azure CLI, Bicep, Git, and VS Code — the tooling every later chapter assumes.
+
 !!! tip
 
     **References:**

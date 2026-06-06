@@ -45,11 +45,13 @@ CMD ["gunicorn", "--bind", "0.0.0.0:8000", "--workers", "2", "app.main:app"]
     We use `python:3.12-slim` (not the full image) to keep the final image small. For even smaller images, advanced users can use a multi-stage build with `python:3.12-slim` as the runtime stage.
 
 ## Creating the Azure Container Registry
+
 ```bash
 az acr create --resource-group my-rg --name myacr --sku Basic --admin-enabled true
 ```
 
 ## Classic Pipeline: Build & Push
+
 In the Classic Build Pipeline, add a **Docker** task:
 
 | Setting | Value |

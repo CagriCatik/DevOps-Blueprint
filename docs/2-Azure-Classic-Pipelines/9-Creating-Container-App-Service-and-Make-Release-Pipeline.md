@@ -17,6 +17,7 @@ sequenceDiagram
 ```
 
 ## Configuring the App Service for Containers
+
 In the Azure Portal or CLI, create an App Service with a Docker container source:
 
 ```bash
@@ -30,9 +31,11 @@ az webapp create \
 ## Classic Release Pipeline Setup
 
 ### Add the Build Artifact
+
 Link the build pipeline artifact (the one that published the image tag).
 
 ### Stage: Deploy Container
+
 Add an **Azure Web App for Containers** task:
 
 | Field | Value |

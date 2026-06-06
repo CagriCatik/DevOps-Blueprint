@@ -15,6 +15,7 @@ flowchart LR
 ```
 
 ## 1. Template Expressions `${{ }}`
+
 Evaluated at **compile time** (when the YAML is first parsed). Used to conditionally include steps and loop over objects.
 
 ```yaml
@@ -25,6 +26,7 @@ Evaluated at **compile time** (when the YAML is first parsed). Used to condition
 ```
 
 ## 2. Runtime Expressions `$[ ]`
+
 Evaluated at **runtime** but before the step/job executes. Used mainly to read the **output variables** from a previous job.
 
 ```yaml
@@ -33,6 +35,7 @@ variables:
 ```
 
 ## 3. Macro Expansion `$( )`
+
 The most common syntax. Expanded at **job execution time** when a task or script is actually running.
 
 ```yaml

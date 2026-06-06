@@ -16,12 +16,14 @@ flowchart TD
 ```
 
 ## Step 1: Create the Deployment Group
+
 1. Navigate to **Pipelines → Deployment groups → New**.
 2. Name it (e.g., `Linux-Web-Servers`).
 3. Choose **Linux** as the target type.
 4. Copy the generated **registration script** (a Bash one-liner).
 
 ## Step 2: Register the Target VM
+
 SSH into your Ubuntu VM and paste the registration script. This installs the Azure Pipelines agent and registers the machine with the deployment group:
 
 ```bash
@@ -37,6 +39,7 @@ SSH into your Ubuntu VM and paste the registration script. This installs the Azu
     "Run as a service" means the agent keeps running in the background and restarts automatically if the VM reboots — so deployments keep working without you logging in.
 
 ## Step 3: Configure the Release Pipeline Stage
+
 1. In the release pipeline, change the **job type** to **Deployment group job**.
 2. Select your Deployment Group (`Linux-Web-Servers`).
 3. Add steps that deploy the new code and restart the app. A simple **Bash** task works well:

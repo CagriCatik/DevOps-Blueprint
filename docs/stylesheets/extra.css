@@ -1,18 +1,106 @@
 /* ==========================================================================
    Azure DevOps Blueprint — custom styles
    Loaded via extra_css in zensical.toml.
+
+   Brand palette (Azure / Azure DevOps):
+     Azure Blue (primary) ......... #0078D4
+     Dark Blue (hover/active) ..... #106EBE
+     Darker Blue .................. #005BA1
+     Bright Blue (dark mode) ...... #4DA3FF
+     Light Blue tints ............. #EFF6FC, #DEECF9, #C7E0F4
+   Overrides target Material's --md-* theme variables, scoped per color
+   scheme so both light ("default") and dark ("slate") modes stay on-brand.
    ========================================================================== */
 
-/* --- Mermaid diagrams ----------------------------------------------------- */
+/* --- Light mode (Azure DevOps light) -------------------------------------- */
+[data-md-color-scheme="default"] {
+  --md-primary-fg-color:            #0078D4;
+  --md-primary-fg-color--light:     #2B88D8;
+  --md-primary-fg-color--dark:      #106EBE;
+  --md-primary-bg-color:            #ffffff;
+  --md-primary-bg-color--light:     rgba(255, 255, 255, 0.7);
 
-/* Center diagrams and give them a little breathing room. */
+  --md-accent-fg-color:             #106EBE;
+  --md-accent-fg-color--transparent:rgba(0, 120, 212, 0.10);
+
+  /* Links a touch darker than the header blue for AA contrast on white. */
+  --md-typeset-a-color:             #0067C0;
+}
+
+/* --- Dark mode (Azure DevOps dark) ---------------------------------------- */
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color:            #0078D4;
+  --md-primary-fg-color--light:     #2B88D8;
+  --md-primary-fg-color--dark:      #106EBE;
+
+  /* Brighter blue for links/accents so they pop on the dark surface. */
+  --md-accent-fg-color:             #4DA3FF;
+  --md-accent-fg-color--transparent:rgba(77, 163, 255, 0.12);
+  --md-typeset-a-color:             #4DA3FF;
+}
+
+/* --- Links: clear hover/focus state --------------------------------------- */
+.md-typeset a:hover,
+.md-typeset a:focus {
+  color: var(--md-accent-fg-color);
+}
+
+/* Branded text selection. */
+::selection {
+  background-color: rgba(0, 120, 212, 0.28);
+}
+
+/* --- Tables: Azure DevOps grid look (blue header row) --------------------- */
+.md-typeset table:not([class]) {
+  width: 100%;
+  display: table;
+}
+
+.md-typeset table:not([class]) th {
+  background-color: var(--md-primary-fg-color);
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.md-typeset table:not([class]) th a {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+/* Subtle zebra striping for easier row scanning. */
+[data-md-color-scheme="default"] .md-typeset table:not([class]) tr:nth-child(even) {
+  background-color: #f6f9fc;
+}
+[data-md-color-scheme="slate"] .md-typeset table:not([class]) tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+/* --- "note" admonition tinted to Azure blue ------------------------------- */
+/* Semantic types (tip/warning/danger/info) keep their meaningful colors;
+   only the neutral "note" is re-tinted to match the brand. */
+.md-typeset .admonition.note,
+.md-typeset details.note {
+  border-color: #0078D4;
+}
+.md-typeset .note > .admonition-title,
+.md-typeset .note > summary {
+  background-color: rgba(0, 120, 212, 0.10);
+}
+.md-typeset .note > .admonition-title::before,
+.md-typeset .note > summary::before {
+  background-color: #0078D4;
+}
+
+/* --- Mermaid diagrams ----------------------------------------------------- */
+/* Center diagrams, keep them responsive, and frame them in a light card. */
 .mermaid {
   display: flex;
   justify-content: center;
   margin: 1.5rem 0;
+  padding: 1rem;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 0.3rem;
 }
-
-/* Keep wide diagrams responsive instead of overflowing the page. */
 .mermaid svg {
   max-width: 100%;
   height: auto;
@@ -25,13 +113,12 @@
   max-width: 64rem;
 }
 
-/* Make tables span the available width for easier scanning. */
-.md-typeset table:not([class]) {
-  width: 100%;
-  display: table;
-}
-
 /* Soften long inline code / file paths so they wrap instead of overflowing. */
 .md-typeset code {
   word-break: break-word;
+}
+
+/* Accent bar on blockquotes (e.g. the term definitions in the cheatsheet). */
+.md-typeset blockquote {
+  border-left: 0.2rem solid var(--md-primary-fg-color);
 }

@@ -28,11 +28,13 @@ flowchart TD
 ```
 
 ## Creating a Task Group
+
 1. In the Classic Pipeline editor, select multiple tasks you want to group (Ctrl+click).
 2. Right-click and choose **Create task group**.
 3. Name it (e.g., `Helm-Deploy-AKS`) and define **parameters** for values that vary per stage (like `namespace` or `imageTag`).
 
 ### Defining Task Group Parameters
+
 During creation, Azure DevOps automatically detects variables that differ per usage and converts them to **parameters**. You can also add parameters manually in the Task Group editor.
 
 | Parameter | Description | Default |
@@ -42,6 +44,7 @@ During creation, Azure DevOps automatically detects variables that differ per us
 | `releaseName` | Helm release name | `shopping-frontend` |
 
 ## Using the Task Group in Multi-Stage Pipelines
+
 When you add the Task Group to a release stage, you fill in the parameter values specific to that environment:
 
 - Dev Stage → `namespace: dev`, `releaseName: shopping-frontend-dev`

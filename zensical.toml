@@ -29,7 +29,8 @@ nav = [
     "1-Introduction/5-Creating-Azure-Repo.md",
     "1-Introduction/6-Classic-vs-Yaml-Pipelines.md",
     "1-Introduction/7-Sample-Python-Application.md",
-    "1-Introduction/8-Git-and-Azure-Repos-Cheatsheet.md"
+    "1-Introduction/8-Git-and-Azure-Repos-Cheatsheet.md",
+    "1-Introduction/9-Local-Tools-and-Environment-Setup.md"
   ]},
   {"Azure Classic Pipelines" = [
     "2-Azure-Classic-Pipelines/1-Python-Classic-Build-Pipeline.md",
@@ -76,6 +77,32 @@ nav = [
     "5-Security-in-Azure-DevOps/2-Pipelines-Releases-and-Variable-Groups-Permissions.md",
     "5-Security-in-Azure-DevOps/3-Environments-AgentPools-and-ServiceConnections-Permissions.md",
     "5-Security-in-Azure-DevOps/4-Azure-Repos-Permissions-and-Policies.md"
+  ]},
+  {"Infrastructure as Code with Bicep" = [
+    "6-Infrastructure-as-Code-with-Bicep/1-What-is-IaC-and-Bicep.md",
+    "6-Infrastructure-as-Code-with-Bicep/2-Setup-Service-Connection-and-Structure.md",
+    "6-Infrastructure-as-Code-with-Bicep/3-Provisioning-a-Resource-Group.md",
+    "6-Infrastructure-as-Code-with-Bicep/4-Log-Analytics-Bicep-Template-and-Module.md",
+    "6-Infrastructure-as-Code-with-Bicep/5-Transpiling-Bicep-to-ARM.md",
+    "6-Infrastructure-as-Code-with-Bicep/6-YAML-Pipeline-to-Provision-Infrastructure.md",
+    "6-Infrastructure-as-Code-with-Bicep/7-Handling-Deployment-Errors.md",
+    "6-Infrastructure-as-Code-with-Bicep/8-Data-Factory-Bicep-Module.md",
+    "6-Infrastructure-as-Code-with-Bicep/9-Provisioning-DataFactory-and-Log-Analytics.md",
+    "6-Infrastructure-as-Code-with-Bicep/10-Modularizing-Bicep-and-YAML-Templates.md"
+  ]},
+  {"Infrastructure as Code with Terraform" = [
+    "7-Infrastructure-as-Code-with-Terraform/1-What-is-Terraform.md",
+    "7-Infrastructure-as-Code-with-Terraform/2-Key-IaC-Concepts.md",
+    "7-Infrastructure-as-Code-with-Terraform/3-Terraform-Environment-Setup.md",
+    "7-Infrastructure-as-Code-with-Terraform/4-Terraform-Core-Workflow-and-First-Resource.md",
+    "7-Infrastructure-as-Code-with-Terraform/5-Variables-Locals-and-Outputs.md",
+    "7-Infrastructure-as-Code-with-Terraform/6-Loops-Conditionals-and-Workspaces.md",
+    "7-Infrastructure-as-Code-with-Terraform/7-Modules-and-the-Registry.md",
+    "7-Infrastructure-as-Code-with-Terraform/8-Azure-Provider-and-Remote-State.md",
+    "7-Infrastructure-as-Code-with-Terraform/9-Shared-Services-Log-Analytics-and-KeyVault.md",
+    "7-Infrastructure-as-Code-with-Terraform/10-Compute-and-Networking.md",
+    "7-Infrastructure-as-Code-with-Terraform/11-Identity-and-Access-with-azuread.md",
+    "7-Infrastructure-as-Code-with-Terraform/12-Day-Zero-Support-with-azapi.md"
   ]}
 ]
 

@@ -5,6 +5,7 @@ Running a self-hosted Azure Pipelines agent on a Windows Virtual Machine gives y
 ## 1. Create an Agent Pool
 
 In Azure DevOps, agents are grouped into **Agent Pools**.
+
 1. Go to **Project Settings** > **Agent pools**.
 2. Click **Add pool**, select **Self-hosted**, name it (e.g., `Windows-Agent`), and grant permission to all pipelines.
 
@@ -33,6 +34,7 @@ In Azure DevOps, agents are grouped into **Agent Pools**.
 ## 4. Install Dependencies
 
 A bare agent cannot run pipelines if the required tools are missing. For our Python + Docker workflow, install:
+
 *   **Install Python:** Download and install the specific Python version your app needs (e.g., 3.12) from [python.org](https://www.python.org/downloads/). During install, tick **"Add Python to PATH"**.
 *   **Install Git:** Required for the agent to check out your source code.
 *   **Install Docker Desktop (optional):** Only needed if your pipeline builds container images. Configure it to use the WSL2 engine.

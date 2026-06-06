@@ -22,14 +22,17 @@ flowchart LR
 ## Creating the Release Pipeline
 
 ### Step 1: Create the Pipeline
+
 Navigate to **Pipelines → Releases → New pipeline** and select the **Azure App Service deployment** template.
 
 ### Step 2: Add the Build Artifact
+
 - Click **Add an artifact**.
 - Select **Build** as the source type.
 - Choose your build pipeline and select **Latest** as the default version.
 
 ### Step 3: Configure the Deployment Stage
+
 In the stage tasks, configure the **Azure App Service Deploy** task for a Python app:
 
 | Field | Value |
@@ -46,6 +49,7 @@ In the stage tasks, configure the **Azure App Service Deploy** task for a Python
     The **Startup command** is the part beginners most often miss. App Service does not know how to start your Flask app on its own — you must tell it to launch **gunicorn** and point it at `app.main:app` (the `app` object inside `app/main.py`).
 
 ### Step 4: Enable Continuous Deployment Trigger
+
 Click the lightning bolt (⚡) on the artifact to enable the **Continuous Deployment trigger**. This automatically creates a new release whenever the linked build pipeline completes successfully.
 
 ## How App Service builds Python dependencies
@@ -61,6 +65,7 @@ SCM_DO_BUILD_DURING_DEPLOYMENT = true
     Make sure your `requirements.txt` is in the **root of the zip** — Oryx looks for it there to know it is a Python app and install your dependencies.
 
 ## Service Connection
+
 The release pipeline needs an **Azure Resource Manager Service Connection** to authenticate with your Azure subscription. You create this under **Project Settings → Service connections**.
 
 !!! tip

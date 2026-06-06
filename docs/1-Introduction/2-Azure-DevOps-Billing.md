@@ -22,6 +22,7 @@ Azure DevOps bills based on how many CI/CD pipelines can run simultaneously, kno
 ### Paid Capacity
 
 If your team needs to run more jobs concurrently, you must purchase additional capacity:
+
 * **Microsoft-Hosted:** ~$40 per extra job/month (removes the 1,800-minute limit).
 * **Self-Hosted:** ~$15 per extra job/month. You manage the infrastructure (e.g., VMs, containers), but gain unlimited minutes.
 

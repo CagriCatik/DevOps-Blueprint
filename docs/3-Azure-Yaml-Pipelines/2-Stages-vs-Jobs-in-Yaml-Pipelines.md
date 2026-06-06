@@ -58,6 +58,7 @@ stages:
 ```
 
 ## Jobs Running in Parallel
+
 Within a single stage, multiple jobs run **in parallel** by default. This is useful for running tests on multiple OS environments simultaneously.
 
 ```yaml
